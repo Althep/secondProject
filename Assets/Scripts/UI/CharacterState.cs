@@ -46,7 +46,7 @@ public class characterStat
         {
             value = 999;
         }
-        strength = value;
+        Strength = value;
     }
 
 
