@@ -13,7 +13,7 @@ public class Calendar : MonoBehaviour
     public int startDOW;// startWeek of Day 0=sunday
     public int endDay;
     public int month;
-    public int year;
+    public int year=1;
     public int dayOfYear;
     public int goneDay;
     public int dayTotal;
@@ -28,15 +28,15 @@ public class Calendar : MonoBehaviour
     DayManager dayManager;
     void Start()
     {
-        calendar = GameObject.Find("Canvas").transform.GetChild(0).transform.GetChild(8).gameObject;
-        calendarContent = calendar.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).gameObject;
-        daySprites = Resources.LoadAll<Sprite>("Images\\Days\\Days");
-        montheImages = Resources.LoadAll<Sprite>("Images\\Months");
-        month = 1;
-        CheckEndDay(month);
-        FillCalendar(startDOW, endDay);
-        monthImage = calendar.transform.GetChild(0).transform.GetChild(0).transform.GetComponent<Image>();
-        ChangeMonthImage();
+        //calendar = GameObject.Find("Canvas").transform.GetChild(0).transform.GetChild(8).gameObject;
+        //calendarContent = calendar.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).gameObject;
+        //daySprites = Resources.LoadAll<Sprite>("Images\\Days\\Days");
+        //montheImages = Resources.LoadAll<Sprite>("Images\\Months");
+        //month = 1;
+        //CheckEndDay(month);
+        //FillCalendar(startDOW, endDay);
+        //monthImage = calendar.transform.GetChild(0).transform.GetChild(0).transform.GetComponent<Image>();
+        //ChangeMonthImage();
     }
 
     // Update is called once per frame
@@ -155,6 +155,7 @@ public class Calendar : MonoBehaviour
     }
     public void GetTotalDayFromBirthDay(SpecialDay birthDay)
     {
+        dayTotal = 0;
         for (int i = 0; i < birthDay.month; i++)
         {
             dayTotal = dayTotal + CheckEndDay(i);

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    SpecialDay birthday;
+    public SpecialDay birthday;
     static GameManager Instance;
+    public CharacterInfo characterInfo;
     private void Awake()
     {
         if (Instance == null)
@@ -17,5 +18,6 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
+        characterInfo = new CharacterInfo();
     }
 }

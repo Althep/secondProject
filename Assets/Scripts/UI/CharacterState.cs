@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-enum Sign{
+public enum Zodiac{
     Capricorn,
-    Verseau,
-    Poissons,
-    Mouton,
+    Aquarius,
+    Pisces,
+    Aries,
     Taurus,
     Gemini,
     Cancer,
@@ -14,13 +14,44 @@ enum Sign{
     Libra,
     Scorpio,
     Archer
-
-
 }
 
-public class characterStat 
+public class CharacterInfo
 {
+    string name;
     int Constitution;
+    int Strength;
+    int Intelligence;
+    int Refinement;
+    int Charisma;
+    int Moral;
+    int Faith;
+    int Sens;
+    int Fighter;
+    int CombatSkill;
+    int CombatAttack;
+    int CombatDefense;
+    int Magician;
+    int MagicalSkill;
+    int MagicalAttack;
+    int MagicalDefense;
+    int Decorum;
+    int Conversation;
+    int HouseWork;
+    int Cooking;
+    int Cleaning;
+    int Temperament;
+    int Sin;
+    int Stress;
+    Zodiac zodiac;
+    public string GetName()
+    {
+        return name;
+    }
+    public void SetName(string value)
+    {
+        name = value;
+    }
     public int GetConstitution()
     {
         return Constitution;
@@ -34,8 +65,15 @@ public class characterStat
         Constitution = value;
     }
 
-
-    int Strength;
+    public Zodiac GetZodiac()
+    {
+        return zodiac;
+    }
+    public void SetZodiac(Zodiac zod)
+    {
+        zodiac = zod;
+    }
+    
     public int GetStrength()
     {
         return Strength;
@@ -50,7 +88,6 @@ public class characterStat
     }
 
 
-    int Intelligence;
     public int GetIntelligence()
     {
         return Intelligence;
@@ -65,7 +102,7 @@ public class characterStat
     }
 
 
-    int Refinement;
+    
     public int GetRefinement()
     {
         return Refinement;
@@ -80,7 +117,7 @@ public class characterStat
     }
 
 
-    int Charisma;
+    
     public int GetCharisma()
     {
         return Charisma;
@@ -95,7 +132,7 @@ public class characterStat
     }
 
 
-    int Moral;
+    
     public int GetMoral()
     {
         return Moral;
@@ -110,7 +147,7 @@ public class characterStat
     }
 
 
-    int Faith;
+    
     public int GetFaith()
     {
         return Faith;
@@ -125,7 +162,7 @@ public class characterStat
     }
 
 
-    int Sens;
+    
     public int GetSens()
     {
         return Sens;
@@ -140,7 +177,7 @@ public class characterStat
     }
 
 
-    int Fighter;
+    
     public int GetFighter()
     {
         return Fighter;
@@ -155,7 +192,7 @@ public class characterStat
     }
 
 
-    int CombatSkill;
+    
     public int GetCombatSkill()
     {
         return CombatSkill;
@@ -170,7 +207,7 @@ public class characterStat
     }
 
 
-    int CombatAttack;
+    
     public int GetCombatAttack()
     {
         return CombatAttack;
@@ -185,7 +222,7 @@ public class characterStat
     }
 
 
-    int CombatDefense;
+    
     public int GetCombatDefense()
     {
         return CombatDefense;
@@ -200,7 +237,7 @@ public class characterStat
     }
 
 
-    int Magician;
+    
     public int GetMagician()
     {
         return Magician;
@@ -215,7 +252,7 @@ public class characterStat
     }
 
 
-    int MagicalSkill;
+    
     public int GetMagicalSkill()
     {
         return MagicalSkill;
@@ -230,7 +267,7 @@ public class characterStat
     }
 
 
-    int MagicalAttack;
+    
     public int GetMagicalAttack()
     {
         return MagicalAttack;
@@ -245,7 +282,7 @@ public class characterStat
     }
 
 
-    int MagicalDefense;
+    
     public int GetMagicalDefense()
     {
         return MagicalDefense;
@@ -275,7 +312,7 @@ public class characterStat
     }
 
 
-    int Decorum;
+    
     public int GetDecorum()
     {
         return Decorum;
@@ -305,7 +342,7 @@ public class characterStat
     }
 
 
-    int Conversation;
+    
     public int GetConversation()
     {
         return Conversation;
@@ -320,7 +357,7 @@ public class characterStat
     }
 
 
-    int HouseWork;
+    
     public int GetHouseWork()
     {
         return HouseWork;
@@ -335,7 +372,7 @@ public class characterStat
     }
 
 
-    int Cooking;
+    
     public int GetCooking()
     {
         return Cooking;
@@ -350,7 +387,7 @@ public class characterStat
     }
 
 
-    int Cleaning;
+    
     public int GetCleaning()
     {
         return Cleaning;
@@ -365,7 +402,7 @@ public class characterStat
     }
 
 
-    int Temperament;
+    
     public int GetTemperament()
     {
         return Temperament;
@@ -380,7 +417,7 @@ public class characterStat
     }
 
 
-    int Sin;
+    
     public int GetSin()
     {
         return Sin;
@@ -395,7 +432,7 @@ public class characterStat
     }
 
 
-    int Stress;
+    
     public int GetStress()
     {
         return Stress;
@@ -413,15 +450,5 @@ public class characterStat
 
 public class CharacterState : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public CharacterInfo characterInfo = new CharacterInfo();
 }

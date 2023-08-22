@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     #region UIs
@@ -18,12 +18,17 @@ public class UIManager : MonoBehaviour
     #endregion
     GameObject calendar;
     GameObject dayScroll;
-
+    Scene scene;
     ScrollRect dayScrollRect;
     void Start()
     {
-        GetEdgeObjects();
-        dayScrollRect.onValueChanged.AddListener(ClampScrollValue);
+        scene = SceneManager.GetActiveScene();
+        if(scene.name == "MainScene")
+        {
+            GetEdgeObjects();
+            dayScrollRect.onValueChanged.AddListener(ClampScrollValue);
+        }
+        
     }
 
     
