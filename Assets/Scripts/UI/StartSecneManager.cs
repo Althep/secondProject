@@ -38,7 +38,6 @@ public class StartSecneManager : MonoBehaviour
         gamemanager.birthday = birthday;
         calendar.GetTotalDayFromBirthDay(birthday);
         Debug.Log(calendar.dayTotal);
-        
     }
     public void GetZodiac()
     {
@@ -125,5 +124,34 @@ public class StartSecneManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void SetCharactorStatus(int zodiacNumber)
+    {
+        infoData = CSVReader.Read("ZodiacData");
+        info.SetConstitution(int.Parse(infoData[zodiacNumber]["Constitution"].ToString()));
+        info.SetStrength(int.Parse(infoData[zodiacNumber]["Strength"].ToString()));
+        info.SetIntelligence(int.Parse(infoData[zodiacNumber]["Intelligence"].ToString()));
+        info.SetRefinement(int.Parse(infoData[zodiacNumber]["Refinement"].ToString()));
+        info.SetCharisma(int.Parse(infoData[zodiacNumber]["Charisma"].ToString()));
+        info.SetMoral(int.Parse(infoData[zodiacNumber]["Moral"].ToString()));
+        info.SetFaith(int.Parse(infoData[zodiacNumber]["Faith"].ToString()));
+        info.SetSens(int.Parse(infoData[zodiacNumber]["Sens"].ToString()));
+        info.SetFighter(int.Parse(infoData[zodiacNumber]["Fighter"].ToString()));
+        info.SetCombatSkill(int.Parse(infoData[zodiacNumber]["CombatSkill"].ToString()));
+        info.SetCombatAttack(int.Parse(infoData[zodiacNumber]["CombatAttack"].ToString()));
+        info.SetCombatDefense(int.Parse(infoData[zodiacNumber]["CombatDefense"].ToString()));
+        info.SetMagician(int.Parse(infoData[zodiacNumber]["Magician"].ToString()));
+        info.SetMagicalSkill(int.Parse(infoData[zodiacNumber]["MagicalSkill"].ToString()));
+        info.SetMagicalAttack(int.Parse(infoData[zodiacNumber]["MagicalAttack"].ToString()));
+        info.SetMagicalDefense(int.Parse(infoData[zodiacNumber]["MagicalDefense"].ToString()));
+        info.SetSocial(int.Parse(infoData[zodiacNumber]["Social"].ToString()));
+        info.SetDecorum(int.Parse(infoData[zodiacNumber]["Decorum"].ToString()));
+        info.SetArt(int.Parse(infoData[zodiacNumber]["Art"].ToString()));
+        info.SetConversation(int.Parse(infoData[zodiacNumber]["Conversation"].ToString()));
+        info.SetHouseWork(int.Parse(infoData[zodiacNumber]["HouseWork"].ToString()));
+        info.SetCooking(int.Parse(infoData[zodiacNumber]["Cooking"].ToString()));
+        info.SetCleaning(int.Parse(infoData[zodiacNumber]["Cleaning"].ToString()));
+        info.SetTemperament(int.Parse(infoData[zodiacNumber]["Temperament"].ToString()));
     }
 }
